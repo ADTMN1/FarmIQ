@@ -14,6 +14,7 @@ import Sidemenu from './sidemenu';
 import Profile from './Profile';
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
+import AppRoutes from '../AppRoutes/AppRoutes';
 
 const headerStyle = {
   display: "flex",
@@ -33,7 +34,13 @@ const contentStyle = {
 
 const siderStyle = {
   backgroundColor: '#0c6800ff',
-  boxShadow: '2px 0 8px 0 rgba(29, 35, 41, 0.05)'
+  boxShadow: '2px 0 8px 0 rgba(29, 35, 41, 0.05)',
+  gap: '10px',
+  display: 'flex',
+  flexDirection: 'column',
+  overflow: 'hidden',
+  height: '100vh',
+
 };
 
 const ZoneDashBoard = () => {
@@ -61,6 +68,8 @@ const ZoneDashBoard = () => {
       <Sidemenu />
         </Sider>
         <Content style={contentStyle}>
+                      <AppRoutes />
+
           <div style={{ 
             background: '#fff', 
             padding: 24, 
@@ -70,7 +79,6 @@ const ZoneDashBoard = () => {
           }}>
             <Typography.Title level={3}>Zone Dashboard</Typography.Title>
             <p>Welcome to your dashboard. Here you can manage your agricultural resources and data.</p>
-            {/* Add your dashboard widgets and components here */}
           </div>
         </Content>
       </Layout>
