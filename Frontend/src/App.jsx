@@ -1,13 +1,15 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/pages/home";
 import ZoneDashBoard from "./components/pages/ZoneDashBoard";
+import { Navigate } from "react-router-dom";
 function App() {
     return (
         <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/zoneDashBoard" element={<ZoneDashBoard />} />
+            <Route path="/ZoneDashBoard/*" element={<ZoneDashBoard />} />
+
         </Routes>
-    );
+    );          
 }
 
 export default App;

@@ -1,0 +1,23 @@
+[33mcommit 84aaf39117034e97fb0747f4cc2108fe26ff0cb9[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mupdate[m[33m, [m[1;31morigin/updateHome[m[33m, [m[1;31morigin/update[m[33m, [m[1;32mupdateHome[m[33m)[m
+Author: besufkad-ayele <ayebesufkad@gmail.com>
+Date:   Mon Dec 1 11:02:08 2025 +0300
+
+    Update home and dashboards
+
+[33mcommit 9cb6c08639f1f261471693c3b15bba3857ab70b5[m[33m ([m[1;32mmain[m[33m)[m
+Author: besufkad-ayele <ayebesufkad@gmail.com>
+Date:   Sun Nov 30 22:12:43 2025 +0300
+
+    Initial frontend project setup with Vite and Tailwind
+
+[33mcommit b6fbead25e9198c9681e7e0a0fdd2523843a44c1[m
+Author: ADTMN1 <163424703+ADTMN1@users.noreply.github.com>
+Date:   Fri Nov 28 15:04:56 2025 -0800
+
+    setup the project
+
+[33mcommit edf7cab219cf2d4b6a94d73bf839a01fc357be59[m
+Author: ADTMN1 <163424703+ADTMN1@users.noreply.github.com>
+Date:   Fri Nov 28 15:03:03 2025 -0800
+
+    first commit

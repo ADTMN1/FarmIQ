@@ -1,5 +1,7 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Card, Typography, Layout, Button } from "antd";
+import ZoneDashBoard from "./ZoneDashBoard";
 import { DownloadOutlined } from "@ant-design/icons";
 import {
   DollarOutlined,
@@ -161,14 +163,34 @@ const ResourceCard = ({
 }) => (
   <Card
     hoverable
-    style={{ width, height }}
-    cover={image && <img src={image} alt={title} />}
+    style={{
+      width: width,
+      height: height,
+      overflow: "hidden",
+    }}
+    cover={
+      image && (
+        <div style={{ height: "300px" }}>
+          <img
+            src={image}
+            alt={title}
+            style={{
+              width: "100%",
+              height: "100%", // <-- 2. Image fills its 200px container
+              objectFit: "cover",
+              objectPosition: "50% 0",
+            }}
+          />
+        </div>
+      )
+    }
   >
     {description && <p>{description}</p>}
   </Card>
 );
 
 const Home = () => {
+  const navigate = useNavigate();
   // Data for news cards
   const newsItems = [
     { id: 1, image: "../src/assets/image.png" },
@@ -208,10 +230,11 @@ const Home = () => {
           <a href="#">About us</a>
           <a href="#">Resources</a>
           <a href="#">Updates</a>
-          <a href="/zoneDashBoard">Transparency</a>
+          <a href="#">Transparency</a>
           <Button
             type="primary"
             style={{ background: "green", color: "white", margin: "15px" }}
+            onClick={() => navigate("/ZoneDashBoard")}
           >
             Login
           </Button>
@@ -424,7 +447,7 @@ const Home = () => {
                 key={farmer.id || index}
                 title={farmer.name}
                 description={farmer.description}
-                image={farmer.image}
+                image={farmer.image || "../src/assets/farmer1.png"}
                 width={350}
                 height={400}
               />

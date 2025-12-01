@@ -1,20 +1,13 @@
-import React from 'react';
-import { Layout, Typography, Button, Menu } from 'antd';
+import React from "react";
+import { Layout, Typography, Button, Menu } from "antd";
 import {
   HomeOutlined,
-  DashboardOutlined,
   LogoutOutlined,
-  FilePdfOutlined,
-  VideoCameraOutlined,
-  UserOutlined
-} from '@ant-design/icons';
-import Dashboard from './dashboards/Dashboard';
-import { Link } from 'react-router-dom';
-import Sidemenu from './sidemenu';
-import Profile from './Profile';
+} from "@ant-design/icons";
+import Sidemenu from "./sidemenu";
+import Profile from "./Profile";
 const { Header, Content, Footer, Sider } = Layout;
-const { SubMenu } = Menu;
-import AppRoutes from '../AppRoutes/AppRoutes';
+import AppRoutes from "../AppRoutes/AppRoutes";
 
 const headerStyle = {
   display: "flex",
@@ -23,39 +16,37 @@ const headerStyle = {
   backgroundColor: "#ffffff93",
   height: "84px",
   padding: "0 24px",
-  boxShadow: "0 1px 4px rgba(0, 21, 41, 0.08)"
+  boxShadow: "0 1px 4px rgba(0, 21, 41, 0.08)",
 };
 
 const contentStyle = {
-  padding: '24px',
-  minHeight: 'calc(100vh - 84px)',
-  background: '#f0f2f5'
+  padding: "24px",
+  minHeight: "calc(100vh - 84px)",
+  background: "#f0f2f5",
 };
 
 const siderStyle = {
-  backgroundColor: '#0c6800ff',
-  boxShadow: '2px 0 8px 0 rgba(29, 35, 41, 0.05)',
-  gap: '10px',
-  display: 'flex',
-  flexDirection: 'column',
-  overflow: 'hidden',
-  height: '100vh',
-
+  backgroundColor: "#0c6800ff",
+  boxShadow: "2px 0 8px 0 rgba(29, 35, 41, 0.05)",
+  gap: "10px",
+  display: "flex",
+  flexDirection: "column",
+  overflow: "hidden",
+  height: "100vh",
 };
 
 const ZoneDashBoard = () => {
   return (
-    <Layout style={{ minHeight: '100vh' }}>
+    <Layout style={{ minHeight: "100vh" }}>
       <Header style={headerStyle}>
         <Typography.Title level={4} style={{ color: "Green", margin: 0 }}>
           <HomeOutlined style={{ marginRight: 8 }} />
           Agriculture Data Exchange
         </Typography.Title>
         <div className="flex items-center gap-6">
-         
-          <Button 
-            type="primary" 
-            icon={<LogoutOutlined />} 
+          <Button
+            type="primary"
+            icon={<LogoutOutlined />}
             style={{ background: "green" }}
           >
             Logout
@@ -65,24 +56,15 @@ const ZoneDashBoard = () => {
       </Header>
       <Layout>
         <Sider width={250} style={siderStyle} theme="light">
-      <Sidemenu />
+          <Sidemenu />
         </Sider>
         <Content style={contentStyle}>
-                      <AppRoutes />
-
-          <div style={{ 
-            background: '#fff', 
-            padding: 24, 
-            minHeight: '100%',
-            borderRadius: 8,
-            boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.03)'
-          }}>
-            <Typography.Title level={3}>Zone Dashboard</Typography.Title>
-            <p>Welcome to your dashboard. Here you can manage your agricultural resources and data.</p>
+          <div className="flex bg-white w-full h-full rounded-lg">
+            <AppRoutes />
           </div>
         </Content>
       </Layout>
-      <Footer style={{ textAlign: 'center', background: '#f0f2f5' }}>
+      <Footer style={{ textAlign: "center", background: "#f0f2f5" }}>
         FarmIQ ©2025 - Zone Dashboard
       </Footer>
     </Layout>
