@@ -1,5 +1,6 @@
 import React from "react";
 import { Layout, Typography, Button, Menu } from "antd";
+import Notification from "./Notification";
 import {
   HomeOutlined,
   LogoutOutlined,
@@ -52,6 +53,8 @@ const ZoneDashBoard = () => {
             Logout
           </Button>
           <Profile />
+          <Notification />
+
         </div>
       </Header>
       <Layout>
