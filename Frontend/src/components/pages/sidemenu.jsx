@@ -6,7 +6,10 @@ import {
     UserOutlined,
     MessageOutlined,
     EnvironmentOutlined,
+    FormOutlined,
+    NotificationOutlined,
 } from "@ant-design/icons";
+import { TbUrgent } from "react-icons/tb";
 const items = [{
   key: "dashboard",
   icon: <DashboardOutlined />,
@@ -27,6 +30,21 @@ const items = [{
   icon: <EnvironmentOutlined />,
   label: "Kebeles",
 },
+{
+  key: "Forms",
+  icon: <FormOutlined />,
+  label: "Forms",
+},
+{
+  key: "urgencies",
+  icon: <TbUrgent />,
+  label: "Urgenies",
+},
+{
+  key: "notifications",
+  icon: <NotificationOutlined />,
+  label: "Notifications",
+}
 ]
 const Sidemenu = () => {
   const navigate = useNavigate();

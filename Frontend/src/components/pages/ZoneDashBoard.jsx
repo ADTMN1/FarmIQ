@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Layout, Typography, Button, Menu } from "antd";
 import Notification from "./Notification";
 import {
@@ -37,6 +38,7 @@ const siderStyle = {
 };
 
 const ZoneDashBoard = () => {
+  const navigate = useNavigate();
   return (
     <Layout style={{ minHeight: "100vh" }}>
       <Header style={headerStyle}>
@@ -49,6 +51,10 @@ const ZoneDashBoard = () => {
             type="primary"
             icon={<LogoutOutlined />}
             style={{ background: "green" }}
+            onClick={() => {
+              navigate("/Home");
+
+            }}
           >
             Logout
           </Button>
