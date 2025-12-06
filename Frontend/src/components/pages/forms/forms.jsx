@@ -1,7 +1,6 @@
 import { Card, Button, Input } from "antd";
 import { useState } from "react";
 
-
 const Kebeles = ({ onSelect }) => {
   const kebeleList = [
     { id: 1, name: "Kebele 1" },
@@ -9,50 +8,49 @@ const Kebeles = ({ onSelect }) => {
     { id: 3, name: "Kebele 3" },
     { id: 4, name: "Kebele 4" },
     { id: 5, name: "Kebele 5" },
+ 
   ];
 
   return (
     <Card
       style={{
-        backgroundColor: "#ffffff",
         width: "50%",
         margin: "0 auto",
         padding: 20,
-        display : "flex",
-        flexDirection : "column",
-        alignItems : "center",
-        justifyContent : "center",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
       }}
     >
       <h2 className="text-xl font-bold mb-4">Select a Kebele</h2>
 
-      <div className="flex flex-row gap-3 flex-wrap justify-center w-full">
+      <div className="flex flex-wrap justify-center gap-4 w-full">
         {kebeleList.map((kebele) => (
           <Card
             key={kebele.id}
-            style={{ width: "120px" , height : "200px" }}
+            className="cursor-pointer text-center flex-1 min-w-[180px] h-32"
+            style={{
+              height: "128px",
+              backgroundImage: "#fdcb25ff",
+            }}
             hoverable
-            className="cursor-pointer text-center"
             onClick={() => onSelect(kebele)}
           >
-            {kebele.name}
+            <Card.Meta title={kebele.name} />
           </Card>
         ))}
       </div>
     </Card>
   );
 };
-
-
 const KebeleForm = ({ selectedKebele }) => {
   const [value, setValue] = useState("");
 
   const handleSubmit = () => {
     if (!selectedKebele) return;
 
-    alert(
-      `Submitted for: ${selectedKebele.name}\nValue: ${value}`
-    );
+    alert(`Submitted for: ${selectedKebele.name}\nValue: ${value}`);
 
     setValue("");
   };
@@ -73,10 +71,7 @@ const KebeleForm = ({ selectedKebele }) => {
             onChange={(e) => setValue(e.target.value)}
           />
 
-          <Button
-            type="primary"
-            onClick={handleSubmit}
-          >
+          <Button type="primary" onClick={handleSubmit}>
             Submit
           </Button>
         </div>
@@ -84,7 +79,6 @@ const KebeleForm = ({ selectedKebele }) => {
     </Card>
   );
 };
-
 
 const Forms = () => {
   const [selectedKebele, setSelectedKebele] = useState(null);
