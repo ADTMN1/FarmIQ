@@ -234,7 +234,7 @@ const Home = () => {
           <Button
             type="primary"
             style={{ background: "green", color: "white", margin: "15px" }}
-            onClick={() => navigate("/ZoneDashBoard")}
+            onClick={() => navigate("/Login")}
           >
             Login
           </Button>
